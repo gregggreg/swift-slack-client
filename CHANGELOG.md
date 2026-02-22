@@ -5,15 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## Upcoming
+
+## [0.4.0] - 2026-02-22
 
 ### Changed
 
-* Refactored interaction `container` modeling to a typed enum in `SlackModels.Container`.
+* Refactored interaction `container` modeling to a typed enum in `SlackModels.Container` - #60
 
 ### Fixed
 
-* Fixed `block_actions` decoding for message-container payloads by allowing payloads without `view`.
+* Fixed `block_actions` decoding for message-container payloads by allowing payloads without `view` - #60
 
 ## [0.3.0] - 2026-02-16
 
