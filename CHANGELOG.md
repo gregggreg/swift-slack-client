@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+* Refactored interaction `container` modeling to a typed enum in `SlackModels.Container`.
+
+### Fixed
+
+* Fixed `block_actions` decoding for message-container payloads by allowing payloads without `view`.
+
 ## [0.3.0] - 2026-02-16
 
 ### Fixed
