@@ -5,14 +5,17 @@ require 'time'
 def main
   check_prerequisites
 
+  args = ARGV.dup
+  auto_confirm = args.delete('--yes')
+
   # Accept version as argument
-  version = ARGV[0]
+  version = args[0]
   new_tag, latest_tag = get_version(version)
 
   # Confirm (skip if --yes provided)
-  unless ARGV[1] == '--yes'
+  unless auto_confirm
     print "Create release #{new_tag}? (y/N): "
-    exit unless gets.strip.downcase == 'y'
+    exit unless STDIN.gets.to_s.strip.downcase == 'y'
   end
 
   # Test and build
@@ -51,7 +54,7 @@ def get_version(version = nil)
 
   if version.nil?
     print "New version (e.g., 0.1.0): "
-    version = gets.strip
+    version = STDIN.gets.to_s.strip
   end
   
   abort "Invalid version format" unless version =~ /^\d+\.\d+\.\d+$/
